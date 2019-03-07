@@ -8,8 +8,6 @@ library(dismo)
 #Central Valley and California shapefiles
 cv = readOGR(dsn = "boundaries", layer = "cv_temp")
 proj <- crs(cv)
-ca = readOGR(dsn = "boundaries", layer = "california")
-ca <- spTransform(ca, proj)
 boundbuf = readOGR(dsn = "boundaries", layer = "study_area_boundary")
 boundbuf <- spTransform(boundbuf, proj)
 r <- raster(boundbuf,res=5000)
